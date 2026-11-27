@@ -9,6 +9,7 @@
 - [Exact extraction](science/exact-extraction.md) — Weighted charge equality, opposite Hamming parity, the affine line projection, and the Gaussian rational converse.
 - [Three-input protocol](science/three-input-protocol.md) — Sharp minimality, explicit CNOTs and parity checks, phase cancellation, and the mixed pair marginals.
 - [Yield and robustness](science/yield-and-robustness.md) — Pointwise upper envelope, joint optimization for independent triples, and residual phase errors.
+- [Burst converse](science/burst-converse.md) — Charge and burst-parity sectors, a fifth-order obstruction for independent offsets, the sharp independent-phase order, and the general sixth-order obstruction.
 - [Related work](references/RELATED_WORK.md) — Which ingredients come from earlier concentration, distillation, and phase-control results.
 
 ## Study and verification
