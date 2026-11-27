@@ -18,6 +18,10 @@ Erew and colleagues use composite pulses to suppress systematic preparation erro
 
 ## Background
 
-The stabilizer description, syndrome projection and Clifford decoding are standard. Gottesman gives the stabilizer and Heisenberg framework used for the two-CNOT circuit. Bravyi and Kitaev develop the resource role and distillation of magic states with ideal Clifford operations. Bartlett, Rudolph and Spekkens explain how phase averaging preserves coherence inside fixed charge sectors. [Gottesman (1998)](https://arxiv.org/abs/quant-ph/9807006) · [Bravyi and Kitaev (2005)](https://doi.org/10.1103/PhysRevA.71.022316) · [Bartlett, Rudolph and Spekkens (2007)](https://doi.org/10.1103/RevModPhys.79.555)
+The stabilizer description, syndrome projection and Clifford decoding are standard. Gottesman develops these tools and their use for fault-tolerant ancillas. Bravyi and Kitaev develop the resource role and distillation of magic states with ideal Clifford operations. Bartlett, Rudolph and Spekkens explain how phase averaging preserves coherence inside fixed charge sectors. [Gottesman (2009)](https://arxiv.org/html/0904.2557v1) · [Bravyi and Kitaev (2005)](https://doi.org/10.1103/PhysRevA.71.022316) · [Bartlett, Rudolph and Spekkens (2007)](https://doi.org/10.1103/RevModPhys.79.555)
+
+## Source bursts
+
+Balada Gaggioli and Mareček reduce ordinary distillation to stabilizer code projections and use field conjugation to relate complementary fault patterns. Proposition 5 gives the minimum of nine independently faulty equatorial T inputs for quadratic suppression. In the [mixed phase-and-burst model](../science/burst-converse.md), continuous charge separation makes that result applicable to at most five logical T inputs within any independent-phase sector. The same separation and a stabilizer-code support argument yield a direct fifth-order obstruction. [Balada Gaggioli and Mareček (2026)](https://arxiv.org/html/2610.31115v1)
 
 The [bibliography](references.bib) supplies citation records for these sources.

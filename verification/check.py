@@ -189,12 +189,31 @@ def check_repetitions():
         assert field_bound(charge_sectors(gains)) == success
 
 
+def check_burst_charge_sectors():
+    # Each independent bundle has its own two charge coordinates.
+    local_sectors = charge_sectors(VECTOR_GAINS)
+    for local_charges in product(local_sectors, repeat=5):
+        labels = {tuple(sum(word) % 2 for word in words)
+                  for words in product(*(local_sectors[q] for q in local_charges))}
+        logical_inputs = local_charges.count((1, 1))
+        assert len(labels) == 2**logical_inputs
+        assert (len(labels) == 32) == (local_charges == ((1, 1),)*5)
+
+    for history in bit_strings(5):
+        complement = tuple(1 - bit for bit in history)
+        for parity in bit_strings(5):
+            sign = (-1)**sum(b * r for b, r in zip(history, parity))
+            complement_sign = (-1)**sum(b * r for b, r in zip(complement, parity))
+            assert complement_sign == sign * (-1)**sum(parity)
+
+
 def main():
     checks = (
         ("Affine-line decoder, small nonzero gains, and sharp triples", check_minimal_triples),
         ("Two-mode twirl and all two-qubit reductions", check_twirl),
         ("Yield and fidelity under phase mismatch", check_mismatch),
         ("Tight yield for independently drifting triplets", check_repetitions),
+        ("Independent burst charge sectors and history complement signs", check_burst_charge_sectors),
     )
     for label, check in checks:
         check()

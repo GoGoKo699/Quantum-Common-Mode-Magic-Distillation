@@ -4,11 +4,14 @@
 
 Each source aims for the equatorial state with relative phase π/4. Measure the two Z parities that select the basis strings `001` and `110`. Their unknown phases agree, while their nominal phases differ by π/4. Two CNOTs decode the surviving superposition to one qubit. Equivalently, apply those CNOTs first, measure the other two qubits, and accept the outcome `01`.
 
+With five sources that also suffer whole-bundle Z bursts, the [Quantum Magic Burst Routing](https://github.com/GoGoKo699/Quantum-Magic-Burst-Routing) sister project constructs a receiver that uses cross-source phase ties to obtain fifth-order infidelity at positive yield. Its checks distinguish complementary burst histories. The [converse here](science/burst-converse.md) shows why fully independent offsets limit the same 15 supplied carriers to first order, and why sixth order is impossible even with ties.
+
 | Result | What it establishes |
 | --- | --- |
 | [Exact extraction criterion](science/exact-extraction.md) | For any finite input block with known phase sensitivities, success is possible exactly when two strings have the same total phase sensitivity and opposite Hamming-weight parity. |
 | [Optimal three-input protocol](science/three-input-protocol.md) | The two-check circuit attains the pointwise bound of 1/4. When the first two phase errors are independent and uniform, every two-qubit marginal of the averaged input is maximally mixed. |
 | [Yield and robustness](science/yield-and-robustness.md) | A pointwise upper bound applies to arbitrary gain lists. Independent three-input blocks attain a sharp combined yield. For the minimal circuit, residual output error depends only on the mismatch in the phase sum. |
+| [Continuous drift with source bursts](science/burst-converse.md) | A successful fifth-order branch requires one charge sector containing all 32 source parity labels. The fully independent model reduces to at most five logical T inputs in each sector. |
 
 ## Read the science
 
@@ -16,7 +19,7 @@ The [science overview](science/README.md) connects the [input model](science/mod
 
 ## Learn the project
 
-The educational anchor is Daniel Gottesman’s *The Heisenberg Representation of Quantum Computers* (1998). The [bridge](learning/anchor-and-bridge.md) uses its Pauli, Clifford, and stabilizer formalism to derive the two-check decoder, then develops the weighted phase sectors and the converse. The [30-milestone map](learning/milestones.md) follows the argument from the raw source model to the yield bounds. The [reading guide](llms.txt) points to the authoritative account for each result.
+The educational anchor is Daniel Gottesman’s *An Introduction to Quantum Error Correction and Fault-Tolerant Quantum Computation* (2009). The [bridge](learning/anchor-and-bridge.md) uses its Pauli, Clifford, and stabilizer formalism to derive the two-check decoder and develop the charge-sector proof. The [30-milestone map](learning/milestones.md) follows the argument from the raw source model through exact extraction, yield bounds, and the burst converse. The [reading guide](llms.txt) points to the authoritative account for each result.
 
 ## Reproduce the checks
 
@@ -24,7 +27,7 @@ Run `python3 verification/check.py` from the repository root. The [verification 
 
 ## Scope
 
-The receiver receives prepared states and their known phase sensitivities. The exact results assume ideal stabilizer operations in a stable Clifford reference frame, with no nonstabilizer catalyst or control over the source pulses. Every raw input is charged, including rejected runs. Independent phase errors, faulty processing, and the cost of realizing the source affect the physical implementation.
+The receiver receives prepared states and their known phase sensitivities. The results assume ideal stabilizer operations in a stable Clifford reference frame, with no nonstabilizer catalyst or control over the source pulses. Every raw input is charged, including rejected runs. The burst converse assumes each burst flips all carriers of its source and the burst rate sets the small parameter.
 
 ## Purpose and contact
 

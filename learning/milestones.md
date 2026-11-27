@@ -1,6 +1,6 @@
 # Project understanding map
 
-The **12 background milestones** build the delivered-state model from single-qubit phases, parity measurements, stabilizer arithmetic and independent phase functions. The **18 research milestones** start with the three-input circuit, prove the general criterion and connect optimal yield to physical source conditions. The [educational bridge](anchor-and-bridge.md) identifies the sections of Daniel Gottesman's review used here.
+The **12 background milestones** build the delivered-state model from single-qubit phases, parity measurements, stabilizer arithmetic and independent phase functions. The **18 research milestones** start with the three-input circuit, prove the general criterion, and connect yield and burst suppression to source conditions. The [educational bridge](anchor-and-bridge.md) identifies the sections of Daniel Gottesman's 2009 introduction used here.
 
 | Route | Milestones |
 |---|---|
@@ -338,38 +338,38 @@ The **12 background milestones** build the delivered-state model from single-qub
 
 **Sources.** [Yield and robustness](../science/yield-and-robustness.md) · [Three-input protocol](../science/three-input-protocol.md)
 
-### M28 Physical source and receiver roles
+### M28 Phase cancellation with a source burst
 
-**Central question.** What would a hardware implementation have to supply?
+**Central question.** What survives the triple decoder when a burst applies Z on all three carriers?
 
-**Understanding target.** Account for the sensitivities and nominal phases as source properties, distinguish them from the receiver's Clifford operations, and identify where source control or extra noise would change the model.
+**Understanding target.** Track the two accepted basis strings through a whole-bundle Z fault. Derive the remaining logical Z fault from their opposite parities and the conditional infidelity from the burst probability. Identify which quantities must be supplied by a source model and which the receiver can measure.
 
 **Prerequisites.** [M12](#m12-the-delivered-state-task), [M23](#m23-optimal-probability-for-three-inputs), [M27](#m27-imperfect-phase-addition).
 
-**Conceptual connection.** This makes the delivered-state result usable without attributing a hardware capability to the abstract circuit.
+**Conceptual connection.** Equal charges remove the continuous phase while opposite parities transfer the burst sign to the output.
 
-**Sources.** [Delivered-state model](../science/model.md) · [Yield and robustness](../science/yield-and-robustness.md)
+**Sources.** [Delivered-state model](../science/model.md) · [Burst converse](../science/burst-converse.md)
 
-### M29 Reading theorem evidence and attribution
+### M29 A converse for five source bundles
 
-**Central question.** What does the finite verification establish alongside the proofs?
+**Central question.** Why can phase ties change the suppression order with the same 15 supplied carriers?
 
-**Understanding target.** Trace which source relationships use known stabilizer and phase facts, which claims follow from the theorem and which circuit or numerical checks test finite instances.
+**Understanding target.** Separate the exactness constraint by charge, then use the involution to pair complementary histories. Identify why the fifth-order sector needs all 32 bundle parity labels. Use factorization into local charges to understand when ordinary noisy-T distillation bounds apply.
 
-**Prerequisites.** [M20](#m20-the-exact-extraction-criterion), [M23](#m23-optimal-probability-for-three-inputs), [M24](#m24-invisible-coherence-in-pair-marginals), [M25](#m25-a-projection-bound-for-larger-blocks), [M27](#m27-imperfect-phase-addition).
+**Prerequisites.** [M18](#m18-exactness-on-every-branch), [M19](#m19-eliminating-single-parity-sectors), [M22](#m22-uniqueness-of-the-useful-triple-sector), [M28](#m28-phase-cancellation-with-a-source-burst).
 
-**Conceptual connection.** The reader can assess exactness, physical scope and evidence separately when relating this work to existing concentration protocols.
+**Conceptual connection.** The weighted charges separate continuous drift, and the bundle parities resolve what the same fine branch can do on different binary histories.
 
-**Sources.** [Educational bridge](anchor-and-bridge.md) · [Scientific reading route](../science/README.md)
+**Sources.** [Burst converse](../science/burst-converse.md) · [Earlier distillation bounds](../references/RELATED_WORK.md#source-bursts)
 
 ### M30 The complete scientific story
 
 **Central question.** When can common phase drift be removed while retaining a fixed non-Clifford phase?
 
-**Understanding target.** Explain the full sequence from weighted charges to the parity filter, exact obstruction, sharp triple yield and the consequences of imperfect source alignment.
+**Understanding target.** Explain the full sequence from weighted charges to the parity filter, exact obstruction, sharp triple yield and the consequences of imperfect source alignment. Compare the phase-only exact output with the phase-tied sister receiver's fifth-order output. Distinguish the proof and the finite checks of the independent-phase charge structure.
 
-**Prerequisites.** [M20](#m20-the-exact-extraction-criterion), [M23](#m23-optimal-probability-for-three-inputs), [M24](#m24-invisible-coherence-in-pair-marginals), [M26](#m26-comparing-a-filter-with-a-yield-bound), [M27](#m27-imperfect-phase-addition), [M28](#m28-physical-source-and-receiver-roles), [M29](#m29-reading-theorem-evidence-and-attribution).
+**Prerequisites.** [M20](#m20-the-exact-extraction-criterion), [M23](#m23-optimal-probability-for-three-inputs), [M24](#m24-invisible-coherence-in-pair-marginals), [M26](#m26-comparing-a-filter-with-a-yield-bound), [M27](#m27-imperfect-phase-addition), [M28](#m28-phase-cancellation-with-a-source-burst), [M29](#m29-a-converse-for-five-source-bundles).
 
 **Conceptual connection.** The same sector structure connects what the receiver can recover, how often it can succeed and which source assumptions matter.
 
-**Sources.** [Scientific reading route](../science/README.md) · [Exact extraction theorem](../science/exact-extraction.md) · [Three-input protocol](../science/three-input-protocol.md) · [Yield and robustness](../science/yield-and-robustness.md)
+**Sources.** [Scientific reading route](../science/README.md) · [Exact extraction theorem](../science/exact-extraction.md) · [Yield and robustness](../science/yield-and-robustness.md) · [Burst converse](../science/burst-converse.md) · [Verification](../verification/README.md)

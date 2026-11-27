@@ -4,16 +4,16 @@ The receiver is handed a block of equatorial qubits. Each carries an unknown pha
 
 ## Educational anchor
 
-Daniel Gottesman, *The Heisenberg Representation of Quantum Computers*, arXiv:quant-ph/9807006v1, 1 July 1998. [Open the versioned text](https://arxiv.org/html/quant-ph/9807006v1).
+Daniel Gottesman, *An Introduction to Quantum Error Correction and Fault-Tolerant Quantum Computation*, arXiv:0904.2557v1, 16 April 2009. This is also the anchor for [Quantum Magic Burst Routing](https://github.com/GoGoKo699/Quantum-Magic-Burst-Routing). [Open the versioned text](https://arxiv.org/html/0904.2557v1)
 
 | Section | Read for | Where it enters this project |
 |---|---|---|
-| §2, Basics of the Heisenberg Representation | Pauli products and conjugation | Understand why a CNOT followed by a target-wire measurement reads a parity. |
-| §3, The Clifford Group | Hadamard, phase gate, CNOT and their action on Paulis | Compile the two-input-string subspace into a single output wire. |
-| §5, Stabilizers | Common Pauli eigenspaces and logical degrees of freedom | See how the accepted syndrome leaves a two-dimensional code space and keeps its coherence. |
-| §7, Measurements | Projectors for signed Pauli outcomes and classical feedforward | Distinguish a branch map, its success probability and the normalized state it produces. |
+| §2.3, Eqs. (39)–(41) | Pauli parity measurements and their joint eigenspaces | See how the accepted syndrome leaves a two-dimensional code space and keeps its coherence. |
+| §§3.1 and 3.4 | Binary linear codes and logical Pauli operations | Link parity equations to a surviving logical qubit, then track the signs of its Pauli faults. |
+| §3.5 | Hadamard, phase gate, CNOT, and stabilizer encoding and decoding | Compile the two-input-string subspace into a single output wire. |
+| §§4.5–4.6 | Phase-gate ancillas and selective ancilla preparation | Place the target T state in fault-tolerant computation and count the cost of a rejected herald. |
 
-Gottesman writes $`\mathrm R`$ for the Hadamard and $`\mathrm P`$ for the phase gate. Here those Cliffords are $`H`$ and $`S=\mathrm{diag}(1,i)`$. The desired state is $`|T\rangle=(|0\rangle+\zeta|1\rangle)/\sqrt2`$, with $`\zeta=e^{i\pi/4}`$. It has a relative phase of $`\pi/4`$, while $`S`$ changes a relative phase in steps of $`\pi/2`$.
+Here $`H`$ is the Hadamard and $`S=\mathrm{diag}(1,i)`$ is the Clifford phase gate. The desired state is $`|T\rangle=(|0\rangle+\zeta|1\rangle)/\sqrt2`$, with $`\zeta=e^{i\pi/4}`$. It has a relative phase of $`\pi/4`$, while $`S`$ changes a relative phase in steps of $`\pi/2`$.
 
 ## Work through the three-qubit circuit
 
@@ -35,4 +35,8 @@ Apply CNOTs from qubit 1 to qubits 2 and 3. The two accepted strings become $`00
 
 **Use the arithmetic restriction of stabilizer processing.** In the computational basis, a fine stabilizer branch has entries in $`\mathbb Q(i)`$ up to a shared scalar. For instance, $`H`$ supplies a common factor $`1/\sqrt2`$, while $`S`$ supplies a factor of $`i`$ on its $`|1\rangle`$ component. Clifford generators, signed Pauli projectors and computational-basis contractions preserve this form under composition. In a charge sector containing only even weights, all powers of $`\zeta`$ are powers of $`i`$. In an odd-only sector there is one additional common factor $`\zeta`$. The ratio needed for the T state lies outside $`\mathbb Q(i)`$, forcing every branch that exactly succeeds to annihilate every same-parity sector. The anchor supplies the stabilizer operations. The project supplies this arithmetic argument for the delivered-state family and the proof of necessity and sufficiency. [Exact-extraction proof](../science/exact-extraction.md)
 
-The [30 milestones](milestones.md) develop the source model and stabilizer operations first, then connect the extraction criterion, optimal three-input probability, larger-block bounds and imperfect phase addition.
+## Add a whole-bundle burst
+
+A $`Z`$ fault on every member of a triple supplies opposite signs on the two accepted strings because their parities differ. Decoding still removes the unknown continuous phase and transfers that binary sign to the logical qubit. For five triples equipped with ties, a comparator keeps two strings with equal charge and even weight difference. After decoding its logical $`X`$ sign records a relative burst parity. Without cross-source ties, a charge sector is a product of singleton and two-string factors. The latter give at most five noisy logical T states and make the ordinary distillation lower bound applicable. [Burst converse](../science/burst-converse.md)
+
+The [30 milestones](milestones.md) develop the source model and stabilizer operations first, then connect the extraction criterion, optimal three-input probability, larger-block bounds, and the distinction between phase cancellation and burst suppression.
