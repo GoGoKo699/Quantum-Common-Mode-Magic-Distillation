@@ -1,0 +1,18 @@
+# Quantum Common-Mode Magic Distillation
+
+> A stabilizer circuit extracts an exact T state from three raw inputs when the third unknown phase error equals the sum of the first two. The success probability is optimally 1/4.
+
+## Science
+
+- [Overview](science/README.md) — Follow the task, minimal circuit, converse, and yield.
+- [Model](science/model.md) — Raw state phases, supplied gain vectors, exact acceptance, ideal allowed operations, and charged resources.
+- [Exact extraction](science/exact-extraction.md) — Weighted charge equality, opposite Hamming parity, the affine line projection, and the Gaussian rational converse.
+- [Three-input protocol](science/three-input-protocol.md) — Sharp minimality, explicit CNOTs and parity checks, phase cancellation, and the mixed pair marginals.
+- [Yield and robustness](science/yield-and-robustness.md) — Pointwise upper envelope, joint optimization for independent triples, and residual phase errors.
+- [Related work](references/RELATED_WORK.md) — Which ingredients come from earlier concentration, distillation, and phase-control results.
+
+## Study and verification
+
+- [Educational bridge](learning/anchor-and-bridge.md) — Selected sections of Gottesman and the additional steps needed for this project.
+- [Milestones](learning/milestones.md) — One 30-step route through the project.
+- [Verification](verification/README.md) — Reproducible finite checks and their scope.
