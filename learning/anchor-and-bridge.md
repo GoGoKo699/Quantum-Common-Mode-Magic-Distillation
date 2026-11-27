@@ -13,7 +13,7 @@ Daniel Gottesman, *The Heisenberg Representation of Quantum Computers*, arXiv:qu
 | §5, Stabilizers | Common Pauli eigenspaces and logical degrees of freedom | See how the accepted syndrome leaves a two-dimensional code space and keeps its coherence. |
 | §7, Measurements | Projectors for signed Pauli outcomes and classical feedforward | Distinguish a branch map, its success probability and the normalized state it produces. |
 
-Gottesman writes $`\mathrm R`$ for the Hadamard and $`\mathrm P`$ for the phase gate. Here those Cliffords are $`H`$ and $`S=\operatorname{diag}(1,i)`$. The desired state is $`|T\rangle=(|0\rangle+\zeta|1\rangle)/\sqrt2`$, with $`\zeta=e^{i\pi/4}`$. It has a relative phase of $`\pi/4`$, while $`S`$ changes a relative phase in steps of $`\pi/2`$.
+Gottesman writes $`\mathrm R`$ for the Hadamard and $`\mathrm P`$ for the phase gate. Here those Cliffords are $`H`$ and $`S=\mathrm{diag}(1,i)`$. The desired state is $`|T\rangle=(|0\rangle+\zeta|1\rangle)/\sqrt2`$, with $`\zeta=e^{i\pi/4}`$. It has a relative phase of $`\pi/4`$, while $`S`$ changes a relative phase in steps of $`\pi/2`$.
 
 ## Work through the three-qubit circuit
 
