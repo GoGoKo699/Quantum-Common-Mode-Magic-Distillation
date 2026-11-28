@@ -2,7 +2,9 @@
 
 **Can a receiver recover an exact T state from raw states with unknown phase errors?** Three inputs suffice when the third phase error is the sum of the first two. A fixed stabilizer circuit heralds an exact T state with probability 1/4, independent of both unknown phases. That yield is optimal for these three inputs, and three is the minimum when every input has nonzero phase sensitivity.
 
-Each source aims for the equatorial state with relative phase π/4. Measure the two Z parities that select the basis strings `001` and `110`. Their unknown phases agree, while their nominal phases differ by π/4. Two CNOTs decode the surviving superposition to one qubit. Equivalently, apply those CNOTs first, measure the other two qubits, and accept the outcome `01`.
+Each source aims for the equatorial state with relative phase π/4. Measure the two Z parities that select the basis strings `001` and `110`. Their unknown phases agree, while their nominal phases differ by π/4. Two CNOTs decode the surviving superposition to one qubit.
+
+To run the [fused receiver](science/three-input-protocol.md#preparation-and-receiver), put the qubit with the summed phase error in position 3. Use qubit 1 as the control for a CNOT onto qubit 2 and then a CNOT onto qubit 3. Measure qubits 2 and 3 in the computational basis. Keep qubit 1 as the T-state output if their ordered bits are `01`. Otherwise discard the block and report rejection. Each attempt consumes three raw inputs.
 
 With five sources that also suffer whole-bundle Z bursts, the [Quantum Magic Burst Routing](https://github.com/GoGoKo699/Quantum-Magic-Burst-Routing) sister project constructs a receiver that uses cross-source phase ties to obtain fifth-order infidelity at positive yield. Its checks distinguish complementary burst histories. The [converse here](science/burst-converse.md) shows why fully independent offsets limit the same 15 supplied carriers to first order, and why sixth order is impossible even with ties.
 
