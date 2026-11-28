@@ -1,0 +1,16 @@
+{
+  "README.md": [
+    "Quantum Common-Mode Magic Distillation"
+  ],
+  "science/three-input-protocol.md": [
+    "Preparation and receiver",
+    "Three inputs are minimal and the yield is sharp",
+    "An additive source model"
+  ],
+  "science/yield-and-robustness.md": [
+    "Sensitivity to imperfect phase addition"
+  ],
+  "learning/anchor-and-bridge.md": [
+    "Work through the three-qubit circuit"
+  ]
+}
